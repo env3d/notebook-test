@@ -10,10 +10,10 @@
       ],
       "settings": {
         "jupyter.defaultKernel": "python3",
-        "notebook.kernelProviderAssociations": {}        
+        "notebook.kernelProviderAssociations": {}
+              
       }
     }
   },
-  "postCreateCommand": "pip install jupyter ipykernel && python -m ipykernel install --user --name python3 --display-name 'Python 3'",
   "forwardPorts": []
 }
