@@ -4,25 +4,30 @@
     "vscode": {
       "extensions": [
         "ms-python.python",
-        "ms-toolsai.jupyter",
-        "ms-toolsai.jupyter-keymap",
-        "ms-toolsai.jupyter-renderers"
+        "ms-toolsai.jupyter"
       ],
       "settings": {
         "python.defaultInterpreterPath": "/home/codespace/.python/current/bin/python",
+        
+        // This is the key: we filter the list to EXACTLY one item.
+        // If the array has more than 1, it prompts. If it has 1, it auto-selects.
         "jupyter.kernels.filter": [
           {
             "path": "/home/codespace/.python/current/bin/python"
           }
         ],
-        "jupyter.jupyterServerType": "local",
+
+        // Force Jupyter to respect the Python extension's choice
         "jupyter.kernelPickerType": "OnlyOneKernel",
-        "notebook.kernelProviderAssociations": {
-          "jupyter-notebook": "ms-toolsai.jupyter/jupyter"
-        }
-              
+        "notebook.kernelProviderAssociations": [
+          {
+            "viewType": "jupyter-notebook",
+            "kernelProviderId": "ms-toolsai.jupyter"
+          }
+        ]
       }
     }
   },
-  "forwardPorts": []
+  // We MUST register the kernel so it has a valid 'display name' the UI recognizes
+  "postCreateCommand": "/home/codespace/.python/current/bin/python -m pip install ipykernel && /home/codespace/.python/current/bin/python -m ipykernel install --user --name python3 --display-name 'Python 3'"
 }
