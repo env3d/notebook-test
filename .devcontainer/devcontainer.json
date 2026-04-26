@@ -9,6 +9,8 @@
       "settings": {
         "python.defaultInterpreterPath": "/home/codespace/.python/current/bin/python3",
         
+        "jupyter.disableJupyterPythonPathAutomagic": true,
+        
         // This ensures the Jupyter extension ONLY sees the kernel we are about to create
         "jupyter.kernels.filter": [
           {
