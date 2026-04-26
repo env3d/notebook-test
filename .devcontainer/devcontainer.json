@@ -10,6 +10,7 @@
       ],
       "settings": {
         "jupyter.defaultKernel": "python3",
+        "python.defaultInterpreterPath": "~/.python/current/bin/python",
         "notebook.kernelProviderAssociations": {}
               
       }
