@@ -10,6 +10,11 @@
       ],
       "settings": {
         "python.defaultInterpreterPath": "/home/codespace/.python/current/bin/python",
+        "jupyter.kernels.filter": [
+          {
+            "path": "/home/codespace/.python/current/bin/python"
+          }
+        ],
         "jupyter.jupyterServerType": "local",
         "jupyter.kernelPickerType": "OnlyOneKernel",
         "notebook.kernelProviderAssociations": {
