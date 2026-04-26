@@ -5,22 +5,6 @@
       "extensions": [
         "ms-python.python",
         "ms-toolsai.jupyter"
-      ],
-      "settings": {
-        "python.defaultInterpreterPath": "/home/codespace/.python/current/bin/python3",
-        
-        "jupyter.disableJupyterPythonPathAutomagic": true,
-        
-        // This ensures the Jupyter extension ONLY sees the kernel we are about to create
-        "jupyter.kernels.filter": [
-          {
-            "path": "/home/codespace/.python/current/bin/python3"
-          }
-        ],
-        "jupyter.kernelPickerType": "OnlyOneKernel"
-      }
+      ]
     }
-  },
-  // This registers your specific path as the 'python3' kernel the notebook is looking for
-  "postCreateCommand": "/home/codespace/.python/current/bin/python3 -m pip install ipykernel && /home/codespace/.python/current/bin/python3 -m ipykernel install --user --name python3 --display-name 'Python 3' --force"
-}
+  }
