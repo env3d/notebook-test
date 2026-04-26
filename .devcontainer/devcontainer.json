@@ -7,28 +7,18 @@
         "ms-toolsai.jupyter"
       ],
       "settings": {
-        // 1. Force the interpreter to your specific path
-        "python.defaultInterpreterPath": "/home/codespace/.python/current/bin/python",
-
-        // 2. FILTER: This is the critical part. 
-        // We exclude everything EXCEPT the specific python3 kernel spec.
+        "python.defaultInterpreterPath": "/home/codespace/.python/current/bin/python3",
+        
+        // This ensures the Jupyter extension ONLY sees the kernel we are about to create
         "jupyter.kernels.filter": [
-            {
-                "path": "/home/codespace/.python/current/bin/python"
-            }
-        ],
-
-        // 3. UI logic to prevent the picker from appearing
-        "jupyter.kernelPickerType": "OnlyOneKernel",
-        "notebook.kernelProviderAssociations": [
           {
-            "viewType": "jupyter-notebook",
-            "kernelProviderId": "ms-toolsai.jupyter"
+            "path": "/home/codespace/.python/current/bin/python3"
           }
-        ]
+        ],
+        "jupyter.kernelPickerType": "OnlyOneKernel"
       }
     }
   },
-  // 4. Register the kernel spec in the OS to match your notebook metadata exactly
-  "postCreateCommand": "/home/codespace/.python/current/bin/python -m pip install ipykernel && /home/codespace/.python/current/bin/python -m ipykernel install --user --name python3 --display-name 'Python 3'"
+  // This registers your specific path as the 'python3' kernel the notebook is looking for
+  "postCreateCommand": "/home/codespace/.python/current/bin/python3 -m pip install ipykernel && /home/codespace/.python/current/bin/python3 -m ipykernel install --user --name python3 --display-name 'Python 3' --force"
 }
