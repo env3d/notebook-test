@@ -9,9 +9,12 @@
         "ms-toolsai.jupyter-renderers"
       ],
       "settings": {
-        "jupyter.defaultKernel": "python3",
         "python.defaultInterpreterPath": "/home/codespace/.python/current/bin/python",
-        "notebook.kernelProviderAssociations": {}
+        "jupyter.jupyterServerType": "local",
+        "jupyter.kernelPickerType": "OnlyOneKernel",
+        "notebook.kernelProviderAssociations": {
+          "jupyter-notebook": "ms-toolsai.jupyter/jupyter"
+        }
               
       }
     }
